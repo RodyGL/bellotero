@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-black: 22, 22, 22;
+    --color-greyish: 165, 165, 165;
+    --color-ice-blue: 249, 250, 255;
+    --color-cobalt-blue: 7, 30, 179;
+    --color-pale-lilac: 214, 220, 255;
+  }
+}
