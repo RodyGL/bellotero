@@ -30,6 +30,7 @@ export function MainNavbar() {
         <div className="flex self-stretch">
           {items.map((item) => (
             <NavLink
+              key={item.text}
               to={item.route}
               className="flex items-center text-[14px] font-medium tracking-[0.3px] text-cobalt-blue ml-[40px] first:ml-0"
               activeClassName="border-t-4 border-solid border-cobalt-blue"

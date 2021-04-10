@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { AppProviders } from './AppProviders';
 import { MainNavbar } from './features/main-navbar/MainNavbar';
 import PageOneIndex from './pages/page-one/PageOneIndex';
@@ -12,11 +12,10 @@ export function App() {
         <MainNavbar />
 
         <Routes>
-          <Route path="/">
-            <Route path="" element={<PageOneIndex />} />
-            <Route path="page-1" element={<PageOneIndex />} />
-            <Route path="page-2" element={<PageTwoIndex />} />
-          </Route>
+          <Route path="page-1" element={<PageOneIndex />} />
+          <Route path="page-2" element={<PageTwoIndex />} />
+
+          <Route path="*" element={<Navigate replace to="/page-1" />} />
         </Routes>
       </AppProviders>
     </div>
