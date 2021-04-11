@@ -8,19 +8,19 @@ const PageTwoIndex = React.lazy(() => import('./pages/page-two/PageTwoIndex'));
 
 export function App() {
   return (
-    <Suspense fallback={null}>
-      <div className="flex flex-col w-full h-screen bg-ice-blue text-black">
-        <AppProviders>
-          <MainNavbar />
+    <div className="flex flex-col w-full h-screen bg-ice-blue text-black">
+      <AppProviders>
+        <MainNavbar />
 
+        <Suspense fallback={null}>
           <Routes>
             <Route path="page-1" element={<PageOneIndex />} />
             <Route path="page-2" element={<PageTwoIndex />} />
 
             <Route path="*" element={<Navigate replace to="/page-1" />} />
           </Routes>
-        </AppProviders>
-      </div>
-    </Suspense>
+        </Suspense>
+      </AppProviders>
+    </div>
   );
 }
